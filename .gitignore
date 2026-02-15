@@ -1,0 +1,11 @@
+# Python venv & cache
+.venv/
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# Do NOT commit secrets
+.env
+.env.*
