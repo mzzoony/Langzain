@@ -14,9 +14,7 @@ from langzain.app import extract_last_assistant_message
 st.set_page_config(
     page_title="Langzain – Conversational Agent",
     page_icon="😎",
-    layout="wide",
-)
-
+    layout="wide",)
 
 # Centered title + subtitle (this is what disappeared)
 st.markdown(

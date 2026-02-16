@@ -13,3 +13,10 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+*.spec
+*.tar.gz
+*.whl
+LangzainChat.exe
+LangzainUI.exe
+LangzainUI/
+LangzainChat/
