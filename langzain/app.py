@@ -1,7 +1,5 @@
 # app.py
-from agent_core import run_agent
-
-
+from .agent_core import run_agent
 def extract_last_assistant_message(messages):
     """
     Given a list of messages (could be dicts or LangChain message objects),

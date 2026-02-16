@@ -5,8 +5,10 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
 
-from tools import get_current_temperature, search_wikipedia
-
+try:
+    from .tools import get_current_temperature, search_wikipedia
+except ImportError:
+    from langzain.tools import get_current_temperature, search_wikipedia
 # Load .env so OPENAI_API_KEY is available
 load_dotenv()
 

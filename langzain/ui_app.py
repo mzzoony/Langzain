@@ -1,6 +1,14 @@
+import sys
+from pathlib import Path
+
+# Make sure the project root is on sys.path so `import langzain...` works
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 import streamlit as st
-from agent_core import run_agent
-from app import extract_last_assistant_message
+from langzain.agent_core import run_agent
+from langzain.app import extract_last_assistant_message
 
 # ---------- Page setup ----------
 st.set_page_config(

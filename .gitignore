@@ -9,3 +9,7 @@ __pycache__/
 # Do NOT commit secrets
 .env
 .env.*
+
+dist/
+build/
+*.egg-info/

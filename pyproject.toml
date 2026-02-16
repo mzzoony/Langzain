@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langzain"
+version = "0.1.0"
+description = "A small conversational AI agent using LangChain + OpenAI + Streamlit."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Mazin Mohammedzain" }
+]
+
+dependencies = [
+  "langchain",
+  "langchain-openai",
+  "streamlit",
+  "python-dotenv",
+  "wikipedia",
+]
+
+[project.urls]
+Homepage = "https://github.com/mzzoony/Langzain"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["langzain*"]
+
+[project.scripts]
+langzain-cli = "langzain.app:main"
