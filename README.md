@@ -17,7 +17,6 @@ It can chat, remember what you said earlier in the session, and call a couple of
 
 ## Setup
 
-```bash
 git clone https://github.com/mzzoony/Langzain.git
 cd Langzain
 
@@ -29,13 +28,34 @@ python -m venv .venv
 pip install -r requirements.txt
 
 
-## How to run
+## Install & Run
 
-Terminal chat:
-  python app.py
-Terminal chat:
- streamlit run ui_app.py
+### Option 1 – Clone the repo (recommended)
 
+This is the best way if you want both the terminal chat and the Streamlit UI.
+
+
+git clone https://github.com/mzzoony/Langzain.git
+cd Langzain
+
+# Create and activate a virtual environment (Windows)
+python -m venv .venv
+.\.venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install the langzain package in editable mode
+pip install -e .
+
+-Before you run anything, create a .env file in the project root and add your key:
+  OPENAI_API_KEY=sk-...
+
+-Run the terminal chat:
+  python -m langzain.app
+
+-Run the Streamlit UI:
+  Run the Streamlit UI
 
 
 
