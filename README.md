@@ -10,7 +10,7 @@ It can chat, remember what you said earlier in the session, and call a couple of
 - 💻 **CLI chat** (`app.py`) so you can talk to it from the terminal  
 - 🌐 **Streamlit UI** (`ui_app.py`) for a lightweight “ChatGPT-style” web interface  
 
-> 🔐 You must bring your own API key (OpenAI or an OpenAI-compatible provider such as OpenRouter).  
+> 🔐 You must bring your own API key (OpenAI or an OpenAI-compatible provider such as OpenRouter).
 > Add it to a `.env` file – the repo never includes any keys.
 
 ---
