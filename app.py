@@ -8,14 +8,24 @@ def extract_last_assistant_message(messages):
     return the text of the last assistant message.
     """
     for m in reversed(messages):
-        # Get role
-        role = getattr(m, "role", None) or m.get("role", None)
-        content = getattr(m, "content", None) or m.get("content", "")
+        role = None
+        content = None
 
+        # Case 1: LangChain message objects (AIMessage, HumanMessage, SystemMessage)
+        if hasattr(m, "content"):
+            # New LangChain messages usually have .type = "ai" / "human" / "system"
+            role = getattr(m, "type", None) or getattr(m, "role", None)
+            content = getattr(m, "content", "")
+
+        # Case 2: plain dicts: {"role": "...", "content": "..."}
+        elif isinstance(m, dict):
+            role = m.get("role")
+            content = m.get("content", "")
+
+        # If this is an assistant/AI message, extract the text
         if role in ("assistant", "ai"):
-            # LangChain sometimes stores content as a list of chunks
+            # Sometimes content is a list of chunks instead of a plain string
             if isinstance(content, list):
-                # Try to join any 'text' chunks
                 parts = []
                 for part in content:
                     if isinstance(part, dict) and part.get("type") == "text":

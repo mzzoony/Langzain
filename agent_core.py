@@ -12,7 +12,9 @@ load_dotenv()
 
 # 1. LLM
 llm = ChatOpenAI(
-    model="gpt-4.1-mini",   # you can change to "gpt-4o-mini" if you have it
+    api_key= os.getenv("OPENAI_API_KEY"),
+    base_url=os.getenv("OPENAI_BASE_URL"),  # e.g. "https://openrouter.ai/api/v1"
+    model=os.getenv("OPENAI_MODULE","openai/gpt-4o-mini"),   # you can change to "gpt-4o-mini" if you have it
     temperature=0,
 )
 
