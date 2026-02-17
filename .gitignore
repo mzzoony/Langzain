@@ -16,7 +16,3 @@ build/
 *.spec
 *.tar.gz
 *.whl
-LangzainChat.exe
-LangzainUI.exe
-LangzainUI/
-LangzainChat/
